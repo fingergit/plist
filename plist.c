@@ -77,20 +77,20 @@ void thread_once(thread_once_t *once_control, void (*init_routine)(void))
     InterlockedExchange(&(once_control->lock), 0);
 }
 
-BOOL WINAPI DllMain(HINSTANCE hModule, DWORD dwReason, LPVOID lpReserved)
-{
-    switch (dwReason) {
-    case DLL_PROCESS_ATTACH:
-        thread_once(&init_once, internal_plist_init);
-        break;
-    case DLL_PROCESS_DETACH:
-        thread_once(&deinit_once, internal_plist_deinit);
-        break;
-    default:
-        break;
-    }
-    return 1;
-}
+// BOOL WINAPI DllMain(HINSTANCE hModule, DWORD dwReason, LPVOID lpReserved)
+// {
+//     switch (dwReason) {
+//     case DLL_PROCESS_ATTACH:
+//         thread_once(&init_once, internal_plist_init);
+//         break;
+//     case DLL_PROCESS_DETACH:
+//         thread_once(&deinit_once, internal_plist_deinit);
+//         break;
+//     default:
+//         break;
+//     }
+//     return 1;
+// }
 
 #else
 

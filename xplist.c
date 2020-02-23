@@ -72,6 +72,8 @@
 
 #define MAX_DATA_BYTES_PER_LINE(__i) (((76 - (__i << 3)) >> 2) * 3)
 
+#include "msvc.h"
+
 static const char XML_PLIST_PROLOG[] = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\
 <!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n\
 <plist version=\"1.0\">\n";
